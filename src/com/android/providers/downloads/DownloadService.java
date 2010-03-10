@@ -482,10 +482,10 @@ public class DownloadService extends Service {
         }
         HashSet<String> fileSet = new HashSet();
         for (int i = 0; i < files.length; i++) {
-            if (files[i].getName().equals(Constants.KNOWN_SPURIOUS_FILENAME)) {
-                continue;
-            }
-            if (files[i].getName().equalsIgnoreCase(Constants.RECOVERY_DIRECTORY)) {
+            String filename = files[i].getName();
+            if (Constants.KNOWN_SPURIOUS_FILENAME.equals(filename) ||
+                    Constants.RECOVERY_DIRECTORY.equalsIgnoreCase(filename) ||
+                    Constants.DEX_CACHE_DIRECTORY.equalsIgnoreCase(filename)) {
                 continue;
             }
             fileSet.add(files[i].getPath());
