@@ -88,6 +88,9 @@ public class Constants {
     /** A magic filename that is allowed to exist within the system cache */
     public static final String RECOVERY_DIRECTORY = "recovery";
 
+    /** A magic filename that is allowed to exist within the system cache */
+    public static final String DEX_CACHE_DIRECTORY = "dalvik-cache";
+
     /** The default user agent used for downloads */
     public static final String DEFAULT_USER_AGENT = "AndroidDownloadManager";
 
