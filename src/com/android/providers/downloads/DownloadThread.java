@@ -710,8 +710,10 @@ http_request_loop:
                         if(downloadedFileStream != null) {
                             try {
                                 downloadedFileStream.close();
-                            } catch (IOException e) {
-                                Log.w(Constants.TAG, "IOException while closing synced file: ", e);
+                            } catch (IOException ex) {
+                                Log.w(Constants.TAG, "IOException while closing synced file: ", ex);
+                            } catch (RuntimeException ex) {
+                                Log.w(Constants.TAG, "exception while closing file: ", ex);
                             }
                         }
                     }
